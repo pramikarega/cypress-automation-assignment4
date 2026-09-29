@@ -1,0 +1,14 @@
+{
+  "standard": {
+    "email": "standard_user@example.com",
+    "password": "script_sauce"
+  },
+  "locked": {
+    "email": "locked_user@example.com",
+    "password": "script_sauce"
+  },
+  "invalid": {
+    "email": "standard_user@example.com",
+    "password": "wrong_password"
+  }
+}

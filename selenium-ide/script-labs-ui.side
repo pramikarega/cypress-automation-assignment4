@@ -1,0 +1,866 @@
+{
+  "id": "59621849-2769-4c6b-9969-54fbd5fd3445",
+  "version": "2.0",
+  "name": "Script Labs UI Testing",
+  "url": "https://labs.hendri.me",
+  "tests": [
+    {
+      "id": "b106ba2b-058b-4f4f-93cd-68cd70fa8a6c",
+      "name": "TC01 - Login dengan akun valid",
+      "commands": [
+        {
+          "id": "236630fb-0076-4a50-aa95-ab024eaa98fe",
+          "comment": "Buka halaman Script Labs",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0dedb9e7-a1e0-4fec-8f7e-7bf58b82620b",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e799389c-c885-4810-a228-3ac06437b204",
+          "comment": "Pastikan belum ada sesi login",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d3551e96-94f3-4f66-aa1f-8ae6985883d6",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ddbeb101-9f0c-4d1c-a365-f946e48778f2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "a7604f2c-42d2-43aa-b0b4-14ef30ce02e7",
+          "comment": "",
+          "command": "assertTitle",
+          "target": "Script Labs - QA Testing Platform",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "66aa2528-3ab0-4127-a3e5-22807cb6af85",
+          "comment": "",
+          "command": "type",
+          "target": "id=email",
+          "targets": [],
+          "value": "standard_user@example.com"
+        },
+        {
+          "id": "47648866-9e42-433f-b004-89dd7222719c",
+          "comment": "",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "script_sauce"
+        },
+        {
+          "id": "7594ae73-aca7-40d6-a8d5-10ce104241a1",
+          "comment": "Submit form login",
+          "command": "sendKeys",
+          "target": "id=password",
+          "targets": [],
+          "value": "${KEY_ENTER}"
+        },
+        {
+          "id": "bf3e4177-7c21-44e0-b854-b3f396e7de31",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "0e471fea-0b7b-4d42-9c0e-2dcb6b9d7459",
+          "comment": "",
+          "command": "assertText",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": "Hello, standard_user@example.com"
+        },
+        {
+          "id": "dca7660f-9709-485c-9b5a-be906fabfe37",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "css=[data-testid=\"shop-section\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c3a2b86b-eccd-40b6-b781-f08bd85a1464",
+          "comment": "Logout",
+          "command": "click",
+          "target": "xpath=//button[text()=\"Logout\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "c61c3f7f-263f-4cac-96e1-c74e805ea4cb",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        }
+      ]
+    },
+    {
+      "id": "45ec9647-08af-4563-b742-ce8717ad51ff",
+      "name": "TC02 - Login dengan password salah",
+      "commands": [
+        {
+          "id": "236630fb-0076-4a50-aa95-ab024eaa98fe",
+          "comment": "Buka halaman Script Labs",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0dedb9e7-a1e0-4fec-8f7e-7bf58b82620b",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e799389c-c885-4810-a228-3ac06437b204",
+          "comment": "Pastikan belum ada sesi login",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d3551e96-94f3-4f66-aa1f-8ae6985883d6",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ddbeb101-9f0c-4d1c-a365-f946e48778f2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "8d4b05c7-ff60-4b41-b40c-669ad711084c",
+          "comment": "",
+          "command": "type",
+          "target": "id=email",
+          "targets": [],
+          "value": "standard_user@example.com"
+        },
+        {
+          "id": "6985ec1b-d6ac-4451-8287-133bb7a6ed8f",
+          "comment": "",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "wrong_password"
+        },
+        {
+          "id": "c56e709e-017d-4a21-9d14-4f86befaec78",
+          "comment": "Submit form login",
+          "command": "sendKeys",
+          "target": "id=password",
+          "targets": [],
+          "value": "${KEY_ENTER}"
+        },
+        {
+          "id": "040bdc1c-868e-4ed4-9fa2-f867b707559e",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//div[text()=\"Invalid email or password\"]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "9dbf9a34-c53b-48e5-b517-cda9e57596ff",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "029240d8-a28f-46ee-93c8-85ba46e56ab2",
+      "name": "TC03 - Search dan filter produk",
+      "commands": [
+        {
+          "id": "236630fb-0076-4a50-aa95-ab024eaa98fe",
+          "comment": "Buka halaman Script Labs",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0dedb9e7-a1e0-4fec-8f7e-7bf58b82620b",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e799389c-c885-4810-a228-3ac06437b204",
+          "comment": "Pastikan belum ada sesi login",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d3551e96-94f3-4f66-aa1f-8ae6985883d6",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ddbeb101-9f0c-4d1c-a365-f946e48778f2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "d191b653-f7ad-43c4-9f04-9d36b07db345",
+          "comment": "",
+          "command": "type",
+          "target": "id=email",
+          "targets": [],
+          "value": "standard_user@example.com"
+        },
+        {
+          "id": "dca7de60-68f1-4d34-a3da-6142811ff237",
+          "comment": "",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "script_sauce"
+        },
+        {
+          "id": "bad9ca56-4af7-468c-a080-18f2f1cd9ec3",
+          "comment": "Submit form login",
+          "command": "sendKeys",
+          "target": "id=password",
+          "targets": [],
+          "value": "${KEY_ENTER}"
+        },
+        {
+          "id": "9a2a0561-b655-49a7-bf02-838a135816a7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "15a6c9fc-68d8-4a04-95e3-87d5c258268e",
+          "comment": "Matikan smooth scroll agar klik stabil",
+          "command": "executeScript",
+          "target": "document.documentElement.style.scrollBehavior = \"auto\"",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e3d31dab-a242-40d8-b5ac-1c5ff34d1898",
+          "comment": "Search produk",
+          "command": "type",
+          "target": "css=[data-testid=\"product-search\"]",
+          "targets": [],
+          "value": "Cypress"
+        },
+        {
+          "id": "7bcfd9b3-fee3-43bb-9144-6546e6de56ae",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=[data-testid=\"add-cypress-checkout-suite\"]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "8f9de73c-3371-4b87-8db5-a35f1fdb6b45",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "css=[data-testid=\"add-postman-api-collection\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e5bb2ee3-52d2-4143-b824-58346920f0a6",
+          "comment": "Reload halaman untuk reset search (sesi login tetap tersimpan)",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "107e627e-6589-45f5-85cd-8458b90d33bd",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=[data-testid=\"category-filter\"]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "9cbebbca-724a-4a77-a33b-eece10125b4c",
+          "comment": "Filter kategori",
+          "command": "select",
+          "target": "css=[data-testid=\"category-filter\"]",
+          "targets": [],
+          "value": "label=API Testing"
+        },
+        {
+          "id": "ed2bd32b-532d-4ac1-b2c6-3269fc4dfb11",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=[data-testid=\"add-postman-api-collection\"]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "6f2a2d63-b116-4672-9a54-981cef99bec9",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "css=[data-testid=\"add-cypress-checkout-suite\"]",
+          "targets": [],
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "5a949169-36ff-4f07-ae2a-d076ae4fa4cc",
+      "name": "TC04 - Add to cart dan checkout",
+      "commands": [
+        {
+          "id": "236630fb-0076-4a50-aa95-ab024eaa98fe",
+          "comment": "Buka halaman Script Labs",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0dedb9e7-a1e0-4fec-8f7e-7bf58b82620b",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e799389c-c885-4810-a228-3ac06437b204",
+          "comment": "Pastikan belum ada sesi login",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d3551e96-94f3-4f66-aa1f-8ae6985883d6",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ddbeb101-9f0c-4d1c-a365-f946e48778f2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "d191b653-f7ad-43c4-9f04-9d36b07db345",
+          "comment": "",
+          "command": "type",
+          "target": "id=email",
+          "targets": [],
+          "value": "standard_user@example.com"
+        },
+        {
+          "id": "dca7de60-68f1-4d34-a3da-6142811ff237",
+          "comment": "",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "script_sauce"
+        },
+        {
+          "id": "bad9ca56-4af7-468c-a080-18f2f1cd9ec3",
+          "comment": "Submit form login",
+          "command": "sendKeys",
+          "target": "id=password",
+          "targets": [],
+          "value": "${KEY_ENTER}"
+        },
+        {
+          "id": "9a2a0561-b655-49a7-bf02-838a135816a7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "15a6c9fc-68d8-4a04-95e3-87d5c258268e",
+          "comment": "Matikan smooth scroll agar klik stabil",
+          "command": "executeScript",
+          "target": "document.documentElement.style.scrollBehavior = \"auto\"",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0883759f-1947-4cb9-8651-c157348b4102",
+          "comment": "Checkout disabled saat cart kosong",
+          "command": "assertElementPresent",
+          "target": "css=[data-testid=\"checkout-submit\"][disabled]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "3a20506f-8dfa-4dd4-85bb-c97f70fe633b",
+          "comment": "",
+          "command": "click",
+          "target": "css=[data-testid=\"add-cypress-checkout-suite\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "fc651dc7-cc53-475c-997d-e98fec58cabd",
+          "comment": "",
+          "command": "click",
+          "target": "css=[data-testid=\"add-postman-api-collection\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "a4761a01-a029-4491-a077-23f2b61bc60f",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=[data-testid=\"qty-cypress-checkout-suite\"]",
+          "targets": [],
+          "value": "1"
+        },
+        {
+          "id": "f4dc9b75-ae34-4f82-b0eb-0714687a5bcc",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//strong[@data-testid=\"cart-total\"][contains(.,\"118.000\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "b178a485-9bd3-4c7f-98fb-3735c6022b5d",
+          "comment": "Tambah quantity",
+          "command": "click",
+          "target": "css=button[aria-label=\"Increase Cypress Checkout Suite\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "b82ce468-f17e-4e56-aeaa-18f83001b3eb",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=[data-testid=\"qty-cypress-checkout-suite\"]",
+          "targets": [],
+          "value": "2"
+        },
+        {
+          "id": "d31f39de-49a9-49c2-b2c3-d0f429ab37c3",
+          "comment": "",
+          "command": "assertElementPresent",
+          "target": "xpath=//strong[@data-testid=\"cart-total\"][contains(.,\"197.000\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "dbe18909-1c61-43b0-a3f8-d6e5eeffd4cb",
+          "comment": "Remove item",
+          "command": "click",
+          "target": "xpath=//div[span[@data-testid=\"qty-postman-api-collection\"]]/following-sibling::button[text()=\"Remove\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "a5674520-489b-4a46-8074-8d027380efc1",
+          "comment": "",
+          "command": "assertElementNotPresent",
+          "target": "css=[data-testid=\"qty-postman-api-collection\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6495d1b9-150b-4061-8468-5e4e1b55921b",
+          "comment": "",
+          "command": "type",
+          "target": "css=[data-testid=\"checkout-name\"]",
+          "targets": [],
+          "value": "QA Tester"
+        },
+        {
+          "id": "35af28f4-35e0-485f-8d25-8f4cbe05fba7",
+          "comment": "",
+          "command": "type",
+          "target": "css=[data-testid=\"checkout-email\"]",
+          "targets": [],
+          "value": "qa.tester@example.com"
+        },
+        {
+          "id": "afe15b54-63fd-4352-9e91-0cf3823a60d5",
+          "comment": "",
+          "command": "type",
+          "target": "css=textarea[name=\"notes\"]",
+          "targets": [],
+          "value": "Checkout via Selenium IDE"
+        },
+        {
+          "id": "2bb0bd08-781c-4de9-811d-38cc4835bfe4",
+          "comment": "",
+          "command": "click",
+          "target": "css=[data-testid=\"checkout-submit\"]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0d84dac6-1fef-40e2-9221-78586e997675",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=[data-testid=\"checkout-success\"]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "b86d25d3-5954-4a76-934e-20b3e17b4c65",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=[data-testid=\"checkout-success\"]",
+          "targets": [],
+          "value": "Checkout successful. This demo order is ready for automation validation."
+        }
+      ]
+    },
+    {
+      "id": "0a7b87d6-26c9-4856-8cd1-3a50cb327f43",
+      "name": "TC05 - Script CRUD (create, edit, delete)",
+      "commands": [
+        {
+          "id": "236630fb-0076-4a50-aa95-ab024eaa98fe",
+          "comment": "Buka halaman Script Labs",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "0dedb9e7-a1e0-4fec-8f7e-7bf58b82620b",
+          "comment": "",
+          "command": "setWindowSize",
+          "target": "1366x768",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e799389c-c885-4810-a228-3ac06437b204",
+          "comment": "Pastikan belum ada sesi login",
+          "command": "executeScript",
+          "target": "localStorage.clear(); sessionStorage.clear();",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d3551e96-94f3-4f66-aa1f-8ae6985883d6",
+          "comment": "",
+          "command": "open",
+          "target": "/",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "ddbeb101-9f0c-4d1c-a365-f946e48778f2",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=email",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "d191b653-f7ad-43c4-9f04-9d36b07db345",
+          "comment": "",
+          "command": "type",
+          "target": "id=email",
+          "targets": [],
+          "value": "standard_user@example.com"
+        },
+        {
+          "id": "dca7de60-68f1-4d34-a3da-6142811ff237",
+          "comment": "",
+          "command": "type",
+          "target": "id=password",
+          "targets": [],
+          "value": "script_sauce"
+        },
+        {
+          "id": "bad9ca56-4af7-468c-a080-18f2f1cd9ec3",
+          "comment": "Submit form login",
+          "command": "sendKeys",
+          "target": "id=password",
+          "targets": [],
+          "value": "${KEY_ENTER}"
+        },
+        {
+          "id": "9a2a0561-b655-49a7-bf02-838a135816a7",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=welcome-user",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "15a6c9fc-68d8-4a04-95e3-87d5c258268e",
+          "comment": "Matikan smooth scroll agar klik stabil",
+          "command": "executeScript",
+          "target": "document.documentElement.style.scrollBehavior = \"auto\"",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "f5c4ea69-ecf4-498c-aeb0-dc71484c6e53",
+          "comment": "Judul unik",
+          "command": "executeScript",
+          "target": "return \"Selenium IDE Lab \" + Date.now()",
+          "targets": [],
+          "value": "title"
+        },
+        {
+          "id": "f32d7859-b0fb-4272-a6e3-db2151880a07",
+          "comment": "Scroll ke atas agar tab tidak tertutup sticky header",
+          "command": "executeScript",
+          "target": "window.scrollTo(0, 0)",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e5120a09-1556-46da-96f9-6ae94c6a7ef1",
+          "comment": "Buka tab Script CRUD",
+          "command": "click",
+          "target": "xpath=//button[@role=\"tab\"][contains(.,\"Script CRUD\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "d13b29fd-8e69-45d5-b413-6839e4b6f134",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "id=title",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "e2d23e0d-4161-4e8e-a4e1-c2b0017861b6",
+          "comment": "Create",
+          "command": "type",
+          "target": "id=title",
+          "targets": [],
+          "value": "${title}"
+        },
+        {
+          "id": "d1bb747d-0d2e-4d6c-bad4-c21da977146a",
+          "comment": "",
+          "command": "type",
+          "target": "id=description",
+          "targets": [],
+          "value": "Dibuat oleh Selenium IDE"
+        },
+        {
+          "id": "4e96d354-f87e-4305-958a-7354f184eb97",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(.,\"Add Script\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "64b044a1-371a-4bda-b635-1c3557aab974",
+          "comment": "Cari script yang baru dibuat",
+          "command": "type",
+          "target": "css=input[aria-label=\"Search scripts\"]",
+          "targets": [],
+          "value": "${title}"
+        },
+        {
+          "id": "1e312b90-bfc1-4be9-a1db-871215be07e3",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h3[text()=\"${title}\"]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "05886fec-e83f-49e3-a080-9004a12dfefc",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//h3[text()=\"${title}\"]/following-sibling::p",
+          "targets": [],
+          "value": "Dibuat oleh Selenium IDE"
+        },
+        {
+          "id": "ad849d36-51cc-4742-a911-5fd61e795f6f",
+          "comment": "Edit",
+          "command": "click",
+          "target": "xpath=//h3[text()=\"${title}\"]/following-sibling::div/button[contains(.,\"Edit\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "e06f83e3-5838-4753-ab8a-b571018f4584",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=input[placeholder=\"Script Title\"]",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "f4459249-deb4-4376-818d-3f53b182321d",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[placeholder=\"Script Title\"]",
+          "targets": [],
+          "value": "${title} Updated"
+        },
+        {
+          "id": "7ce13209-5909-4ba5-bec7-5b10b73052b8",
+          "comment": "",
+          "command": "type",
+          "target": "css=textarea[placeholder=\"Script Description\"]",
+          "targets": [],
+          "value": "Di-update oleh Selenium IDE"
+        },
+        {
+          "id": "7fa5f07b-31fc-4c17-ab23-47163892f59d",
+          "comment": "",
+          "command": "click",
+          "target": "xpath=//button[contains(.,\"Save\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "1d349776-1464-4479-bfa6-7f6e4df051bd",
+          "comment": "",
+          "command": "type",
+          "target": "css=input[aria-label=\"Search scripts\"]",
+          "targets": [],
+          "value": "${title} Updated"
+        },
+        {
+          "id": "cbf0923a-0af4-426b-8b59-f54baf6749a1",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "xpath=//h3[text()=\"${title} Updated\"]",
+          "targets": [],
+          "value": "10000"
+        },
+        {
+          "id": "b6a87e0e-3e23-430f-a68c-8d08e0cef946",
+          "comment": "",
+          "command": "assertText",
+          "target": "xpath=//h3[text()=\"${title} Updated\"]/following-sibling::p",
+          "targets": [],
+          "value": "Di-update oleh Selenium IDE"
+        },
+        {
+          "id": "bc3750d9-9d49-4e78-94f2-3ac966f96b2a",
+          "comment": "Delete",
+          "command": "click",
+          "target": "xpath=//h3[text()=\"${title} Updated\"]/following-sibling::div/button[contains(.,\"Delete\")]",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "6dd03ec0-af6c-41cb-9d04-50a2cf5bd210",
+          "comment": "",
+          "command": "waitForElementVisible",
+          "target": "css=.modal-content",
+          "targets": [],
+          "value": "5000"
+        },
+        {
+          "id": "f3847528-9694-4033-8618-c7c2e18fc63a",
+          "comment": "",
+          "command": "assertText",
+          "target": "css=.modal-content .item-title-highlight",
+          "targets": [],
+          "value": "\"${title} Updated\""
+        },
+        {
+          "id": "7f734ced-9f48-4060-a6f2-b4b992be13c5",
+          "comment": "",
+          "command": "click",
+          "target": "css=.modal-content .btn.danger",
+          "targets": [],
+          "value": ""
+        },
+        {
+          "id": "41d7d67b-8ad2-4942-824f-4e55a60ba390",
+          "comment": "",
+          "command": "waitForElementNotPresent",
+          "target": "xpath=//h3[text()=\"${title} Updated\"]",
+          "targets": [],
+          "value": "10000"
+        }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "d817539d-0de0-40ac-9511-0e6b028b5775",
+      "name": "Script Labs UI Suite",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "b106ba2b-058b-4f4f-93cd-68cd70fa8a6c",
+        "45ec9647-08af-4563-b742-ce8717ad51ff",
+        "029240d8-a28f-46ee-93c8-85ba46e56ab2",
+        "5a949169-36ff-4f07-ae2a-d076ae4fa4cc",
+        "0a7b87d6-26c9-4856-8cd1-3a50cb327f43"
+      ]
+    }
+  ],
+  "urls": [
+    "https://labs.hendri.me/"
+  ],
+  "plugins": []
+}

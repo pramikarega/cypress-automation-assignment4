@@ -1,0 +1,21 @@
+{
+  "name": "cypress-automation-assignment4",
+  "version": "1.0.0",
+  "description": "Assignment 4 - Automation testing API & UI Script Labs menggunakan Cypress dan Selenium IDE",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run",
+    "test:api": "cypress run --spec \"cypress/e2e/api/**/*.cy.js\"",
+    "test:ui": "cypress run --spec \"cypress/e2e/ui/**/*.cy.js\""
+  },
+  "keywords": [
+    "cypress",
+    "selenium-ide",
+    "api-testing",
+    "ui-testing"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^16.1.0"
+  }
+}
