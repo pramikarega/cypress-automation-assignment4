@@ -28,6 +28,8 @@ Kedua website sudah dicek dapat diakses (HTTP 200) sebelum test dibuat.
 │       ├── commands.js               # Custom command: apiLogin, apiRequest, uiLogin
 │       ├── constants.js              # Base URL API
 │       └── e2e.js
+├── docs
+│   └── screenshots                   # Bukti hasil eksekusi test
 ├── selenium-ide
 │   └── script-labs-ui.side           # Project Selenium IDE (UI test)
 ├── cypress.config.js
@@ -130,6 +132,30 @@ Alur CRUD saling berurutan: token dari login dipakai untuk POST, lalu `id` hasil
   √ TC05 - Script CRUD (create, edit, delete)
   Tests: 5 passed, 5 total
 ```
+
+### Screenshot
+
+**1. API Testing — Cypress (`labs-api.cy.js`, 14 passing)**
+
+![Cypress API test](docs/screenshots/cypress-api.png)
+
+**2. UI Testing — Selenium IDE (TC01–TC05 passed)**
+
+![Selenium IDE](docs/screenshots/selenium-ide.png)
+
+**3. ⭐ UI Testing — Cypress**
+
+`login.cy.js` (5 passing)
+
+![Cypress UI login](docs/screenshots/cypress-ui-login.png)
+
+`shop-checkout.cy.js` (6 passing)
+
+![Cypress UI shop checkout](docs/screenshots/cypress-ui-shop-checkout.png)
+
+`script-crud.cy.js` (4 passing)
+
+![Cypress UI script CRUD](docs/screenshots/cypress-ui-script-crud.png)
 
 ## Akun Demo
 
